@@ -2,64 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gatitos Aleatorios</title>
+    <link rel="stylesheet" href="estilos_gatos_API.css">    
 </head>
 <body>
     
-    <h1> Michis App </h1>
+    <header class="cabecera"> 
+
+        <p class="text-8xl text-green-600">Michis App</p>
+  
+    </header>
+
+    
     <span id="error"></span>
 
-    <section id="rendomMichis">
+    <section id="randomMichis">
 
-        <h2> Michis Aleatorios </h2>
+        <h2 id="titulo"> Michis Aleatorios </h2>
 
-        <article>
+        <div id="contenedor_imagenes_aleatorias" class="grid grid-cols-6 gap-4 place-content-stretch w-full p-2"></div>
 
-            <img id="img1" style="width: 150px; height: 150px;" alt="foto gato aleatorio">
-            <button id="btn1" onclick="saveFavoriteMichis()">
-                Guardar michi en favorito
-            </button>
+        <div class="grid grid-cols-1 gap-4 place-content-stretch w-full p-2">
 
-        </article>
+            <button class="w-full h-20 bg-sky-400 rounded-md font-semibold" onclick="loadRandomMichis()">Bring me another Michis</button>
 
-        <article>
-
-            <img id="img2" style="width: 150px; height: 150px;" alt="foto gato aleatorio">
-            <button id="btn2" onclick="saveFavoriteMichis()">
-                Guardar michi en favorito
-            </button>
-
-        </article>
-
-        <button onclick="loadRandomMichis()">Bring me another Michis</button>
+        </div>
 
     </section>
 
     <section id="uploadingMichi">
 
-        <h2>Sube la foto de tu michi</h2>
+        <h2 id="titulo_subir">Sube la foto de tu michi</h2>
         
-        <form id="uploadingForm">
+        <form id="uploadingForm" >
 
-            <input id="file" type="file" name="file"/>
-            <button type="button" onclick="uploadMichoPhoto()">Subir foto de michi</button>
+            <div class="upload_container p-4">
+
+                <input id="file" class="h-10 m-4" type="file" name="file"/>
+                <button class="w-60 h-10 bg-violet-600 rounded-md font-semibold" type="button" onclick="uploadMichoPhoto()">Subir foto</button>
+
+            </div>
 
         </form>
 
     </section>
 
-    <section id="favoriteMichis">
+    <h2 id="titulo_favoritos"> Michis Favoritos </h2>
 
-        <h2> Michis Favoritos </h2>
-
-        <article>
-
-            <button>Sacar michi de favoritos</button>
-
-        </article>
-
-    </section>
+    <section id="favoriteMichis" class="grid grid-cols-6 gap-4 place-content-stretch w-full p-2"></section>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./main.js"></script>

@@ -15,6 +15,9 @@ const spanError = document.getElementById('error');
 
 async function loadRandomMichis(){
 
+    let contenedor_fotos = document.getElementById('contenedor_imagenes_aleatorias');
+    contenedor_fotos.innerHTML = "";
+
     const response = await fetch(API_URL_RANDOM);
     const data = await response.json();
 
@@ -27,16 +30,37 @@ async function loadRandomMichis(){
 
     } else {
 
-    const img1 = document.getElementById('img1');
-    const img2 = document.getElementById('img2');
-    const btn1 = document.getElementById('btn1');
-    const btn2 = document.getElementById('btn2');
-    
-    img1.src = data[0].url; 
-    img2.src = data[1].url; 
+        for( let i = 0 ; i < 6; i++ ){
 
-    btn1.onclick = () => saveFavoriteMichi(data[0].id);
-    btn2.onclick = () => saveFavoriteMichi(data[1].id);
+            let innerDiv = document.createElement('div');
+            innerDiv.className = 'container';
+    
+            let image = document.createElement('img');
+            image.className = 'w-60 h-60 image';
+            image.src = data[i].url;
+    
+            let button = document.createElement('button');
+            let buttonText = document.createTextNode('Guardar en favoritos');
+            button.appendChild(buttonText);
+            button.className = 'w-full h-12 text-center bg-green-500 my-2 button_random rounded-md font-semibold';
+            button.onclick = () => saveFavoriteMichi(data[i].id);
+
+            innerDiv.appendChild(image);   
+            innerDiv.appendChild(button);   
+            contenedor_fotos.appendChild(innerDiv);
+    
+        }
+
+    // const img1 = document.getElementById('img1');
+    // const img2 = document.getElementById('img2');
+    // const btn1 = document.getElementById('btn1');
+    // const btn2 = document.getElementById('btn2');
+    
+    // img1.src = data[0].url; 
+    // img2.src = data[1].url; 
+
+    // btn1.onclick = () => saveFavoriteMichi(data[0].id);
+    // btn2.onclick = () => saveFavoriteMichi(data[1].id);
 
     }    
 
@@ -67,26 +91,40 @@ async function loadFavouriteMichis(){
 
         const section = document.getElementById('favoriteMichis')
         section.innerHTML = "";
-        const h2 = document.createElement('h2');
-        const h2Text = document.createTextNode('Michis Favoritos ');
-        h2.appendChild(h2Text);
-        section.appendChild(h2);
 
         data.forEach(michi => {
             
-            const article = document.createElement('article');
-            const img = document.createElement('img');
-            const btn = document.createElement('button');
-            const btnText = document.createTextNode('Sacar al michi de favoritos');
+            // const article = document.createElement('article');
+            // const img = document.createElement('img');
+            // const btn = document.createElement('button');
+            // const btnText = document.createTextNode('Sacar al michi de favoritos');
 
-            img.src = michi.image.url;
-            img.width = 150;
-            img.height = 150;
-            btn.appendChild(btnText);
-            btn.onclick = () => deleteFavoriteMichi(michi.id);
-            article.appendChild(img);
-            article.appendChild(btn);
-            section.appendChild(article);
+            // img.src = michi.image.url;
+            // img.width = 150;
+            // img.height = 150;
+            // btn.appendChild(btnText);
+            // btn.onclick = () => deleteFavoriteMichi(michi.id);
+            // article.appendChild(img);
+            // article.appendChild(btn);
+            // section.appendChild(article);
+
+            let innerDiv = document.createElement('div');
+            innerDiv.className = 'container';
+    
+            let image = document.createElement('img');
+            image.className = 'w-60 h-60 image';
+            image.src = michi.image.url;
+    
+            let button = document.createElement('button');
+            let buttonText = document.createTextNode('Sacar al michi de favoritos');
+            button.appendChild(buttonText);
+            button.className = 'w-full h-12 text-center bg-red-500 my-2 button_random rounded-md font-semibold';
+            button.onclick = () => deleteFavoriteMichi(michi.id);
+
+            innerDiv.appendChild(image);   
+            innerDiv.appendChild(button);   
+            section.appendChild(innerDiv);
+
         });
 
     }
