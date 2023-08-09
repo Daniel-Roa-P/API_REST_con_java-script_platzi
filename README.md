@@ -4,4 +4,4 @@ Repositorio en el cual se alojan los ejercicios resueltos del curso de asincroni
 
 Ruta a Github pages con el proyecto: https://daniel-roa-p.github.io/API_REST_con_java-script_platzi/
 
-Certificado del curso: https://github.com/Daniel-Roa-P/Curso_de_asincronismo_platzi/blob/main/diploma-api
+Certificado del curso: https://github.com/Daniel-Roa-P/API_REST_con_java-script_platzi/blob/main/diploma-api.pdf
