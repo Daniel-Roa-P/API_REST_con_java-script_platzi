@@ -1,0 +1,20 @@
+{
+  "name": "api_rest_con_java-script",
+  "version": "1.0.0",
+  "description": "Repositorio en el cual se alojan los ejercicios resueltos del curso de asincronismo con JavaScript dictado por Juan David Castro Gallego en Platzi",
+  "main": "main.js",
+  "scripts": {
+    "deploy": "gh-pages -d src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daniel-Roa-P/API_REST_con_java-script_platzi.git"
+  },
+  "keywords": [],
+  "author": "daniel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daniel-Roa-P/API_REST_con_java-script_platzi/issues"
+  },
+  "homepage": "https://github.com/Daniel-Roa-P/API_REST_con_java-script_platzi#readme"
+}
