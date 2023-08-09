@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Daniel-Roa-P/API_REST_con_java-script_platzi/issues"
   },
-  "homepage": "https://github.com/Daniel-Roa-P/API_REST_con_java-script_platzi#readme"
+  "homepage": "https://github.com/Daniel-Roa-P/API_REST_con_java-script_platzi#readme",
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
 }
